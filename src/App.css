@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&display=swap');
+
+.main{
+    color: white;
+}
+
+.header {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.header-wrap {
+    border-bottom: 1px solid white;
+    position: relative;
+    margin: 5% 7%;
+}
+
+
+.content {
+    background-color: #282d59;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    z-index: 1;
+}
+
+.quote {
+    font-family: 'Playfair Display', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 3.750em;
+    line-height : 81px;
+    padding-left: 7%;
+    width: 70%;
+}
+
+.author {
+    font-family : IBM Plex Sans;
+    font-weight: 500;
+    font-size : 28px;
+    padding-left: 7%;
+}
+
+.footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    
+
+}
+
+.footer-wrap{
+    border-top: 1px solid white;
+    position: relative;
+    margin: 5% 7%;
+}
+
+
+

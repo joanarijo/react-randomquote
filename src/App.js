@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainContent from './MainContent';
+import MainContent from './components/MainContent/component';
 import './App.css';
 
 

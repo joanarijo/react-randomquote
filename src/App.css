@@ -16,6 +16,8 @@
     border-bottom: 1px solid white;
     position: relative;
     margin: 5% 7%;
+    display: flex;
+    justify-content: space-between; 
 }
 
 
@@ -56,11 +58,22 @@
 
 }
 
-.footer-wrap{
+.footer-wrap {
     border-top: 1px solid white;
     position: relative;
     margin: 5% 7%;
+    display: flex;
+    justify-content: space-between; 
 }
 
+.share {
+    background: blue;
+    border: 0;
+    color: white;
+}
 
-
+.refresh {
+    background: pink;
+    border: 0;
+    color: white;
+}

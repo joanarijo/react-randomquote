@@ -10,7 +10,7 @@ const Footer = (props) => {
                     <button className="share">Share on Twitter</button>
                     <button className="refresh">Get new quote</button>
                 </div>
-                <div className="credits">Made with ❤ by <a href="https://github.com/joanarijo">Joana Rijo</a> • Quotes API by <a href="http://forismatic.com/en/">Forismatic</a></div>
+                <div className="credits">Made with ❤ by <a href="https://joanarijo.dev/">Joana Rijo</a> • Quotes API by <a href="http://forismatic.com/en/">Forismatic</a></div>
             </div>
         </div>
         

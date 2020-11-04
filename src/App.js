@@ -1,31 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import MainContent from './components/MainContent/component';
 import './App.css';
 
 function App() {
-  const data = async () => {
+
+const [data, setData] = useState({});
+
+
+  const loadData = async () => {
 
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     var apiUrl = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&callback=?';
 
-    const apiRes = await fetch(proxyUrl + apiUrl);
+    const res = await fetch(proxyUrl + apiUrl);
+    setData(await res.json());
+  };
 
-    // convert data to json
-    const resJSON = await apiRes.json();
-    return resJSON;
-  }
-  data().then(res => {
-    
-    console.log(res.quoteText);
-    console.log(res.quoteAuthor);
-  
-  });
-
+  useEffect(() => {
+    loadData();
+    return () => {};
+  }, []);
 
   return (
     <div className="App">
-      <MainContent/>
+      <MainContent 
+        quote={data.quote}
+        author={data.author} />
     </div>
   );
 }

@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const Content = (props) => {
+
+
+const Content = ({quote, author}) => {
+    
     const ContentContainer = styled.div`
         position: absolute;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         display: flex;
         justify-content: center;
@@ -25,12 +28,13 @@ const Content = (props) => {
         font-weight: 500;
         font-size : 28px;
         padding-left: 7%;
+        width: 70%;
     `
     return (
         
         <ContentContainer>
-            <Quote>You can only grow if you\'re willing to feel awkward and uncomfortable when you try something new.</Quote>
-            <Author>– Brian Tracy</Author>
+            <Quote>{quote}</Quote>
+            <Author>{author}</Author>
         </ContentContainer>
         
      );

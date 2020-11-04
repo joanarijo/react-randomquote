@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
@@ -12,7 +11,7 @@ var color = colors[Math.floor(Math.random() * colors.length)];
 
 
 
-const MainContent = (props) => {
+const MainContent = ({quote, author}) => {
 
     const Main = styled.div`
         width: 100%;
@@ -24,7 +23,7 @@ const MainContent = (props) => {
     return (
         <Main>
             <Header/>
-            <Content/>
+            <Content quote={quote} author={author}/>
             <Footer/>
         </Main>
      );

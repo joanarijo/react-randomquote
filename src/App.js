@@ -5,28 +5,30 @@ import './App.css';
 
 function App() {
 
-const [data, setData] = useState({});
-
-
-  const loadData = async () => {
-
+  const [data, setData] = useState([]);
+   
+  useEffect(() => {
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     var apiUrl = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&callback=?';
+    fetch(proxyUrl + apiUrl, {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
 
-    const res = await fetch(proxyUrl + apiUrl);
-    setData(await res.json());
-  };
-
-  useEffect(() => {
-    loadData();
-    return () => {};
+    })
+      .then(response => response.json())
+      .then(data => setData(data));
   }, []);
-
+  
   return (
     <div className="App">
+        <ul>
+
+      </ul>
       <MainContent 
-        quote={data.quote}
-        author={data.author} />
+        quote={data.quoteText}
+        author={data.quoteAuthor} />
     </div>
   );
 }

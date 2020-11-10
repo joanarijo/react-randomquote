@@ -7,7 +7,6 @@ const Content = ({quote, author}) => {
     
     const ContentContainer = styled.div`
         position: absolute;
-        width: 100%;
         height: 100vh;
         display: flex;
         justify-content: center;
@@ -29,6 +28,9 @@ const Content = ({quote, author}) => {
         font-size : 28px;
         padding-left: 7%;
         width: 70%;
+            &:before { 
+            content: '- ';
+            }
     `
     return (
         

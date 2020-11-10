@@ -6,7 +6,7 @@ const Header = (props) => {
 
     const HeaderContainer = styled.div`
         position: absolute;
-        width: 100vw;
+        width: 100%;
         top: 0;
         left: 0;
         z-index: 2;
@@ -14,16 +14,16 @@ const Header = (props) => {
     const HeaderWrap = styled.div`
         border-bottom: 1px solid white;
         position: relative;
-        margin: 5% 7%;
+        margin: 5%;
         display: flex;
         justify-content: space-between; 
+        align-items: center;
     `
     const Logo = styled.h1`
         font-family : 'IBM Plex Sans', Arial, Helvetica, sans-serif;
         font-weight: 300;
         font-size : 20px;
         color : #FFFFFF;
-        color : rgb(255, 255, 255);
         opacity : 0.7;
     `
     const Code = styled.a`
@@ -33,7 +33,7 @@ const Header = (props) => {
     return (
         <HeaderContainer>
             <HeaderWrap>
-                <Logo>#randomquotes</Logo>
+                <Logo>#randomquote</Logo>
                 <Code href="https://github.com/joanarijo/react-randomquote">logogithub</Code>
             </HeaderWrap>
         </HeaderContainer>

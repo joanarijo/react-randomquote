@@ -24,7 +24,7 @@ const MainContent = ({quote, author}) => {
         <Main>
             <Header/>
             <Content quote={quote} author={author}/>
-            <Footer/>
+            <Footer quote={quote} author={author}/>
         </Main>
      );
 }

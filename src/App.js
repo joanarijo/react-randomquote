@@ -8,6 +8,7 @@ function App() {
   const [data, setData] = useState([]);
    
   useEffect(() => {
+    //solves the lack of api's CORS headers
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     var apiUrl = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&callback=?';
     fetch(proxyUrl + apiUrl, {
@@ -23,12 +24,10 @@ function App() {
   
   return (
     <div className="App">
-        <ul>
-
-      </ul>
       <MainContent 
         quote={data.quoteText}
-        author={data.quoteAuthor} />
+        author={data.quoteAuthor}
+      />
     </div>
   );
 }

@@ -23,7 +23,7 @@ function App() {
   }, []);
   
   return (
-    <div className="App">
+    <div>
       <MainContent 
         quote={data.quoteText}
         author={data.quoteAuthor}

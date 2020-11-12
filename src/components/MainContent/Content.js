@@ -19,14 +19,14 @@ const Content = ({quote, author}) => {
         font-weight: 700;
         font-size: 3.750em;
         line-height : 81px;
-        padding-left: 7%;
+        padding-left: 5%;
         width: 70%;
     `
     const Author = styled.h3`
         font-family : IBM Plex Sans;
         font-weight: 500;
         font-size : 28px;
-        padding-left: 7%;
+        padding-left: 5%;
         width: 70%;
             &:before { 
             content: '- ';

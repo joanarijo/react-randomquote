@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import github from '../github.svg';
 
 
 const Header = (props) => {
@@ -14,10 +15,11 @@ const Header = (props) => {
     const HeaderWrap = styled.div`
         border-bottom: 1px solid white;
         position: relative;
-        margin: 5%;
+        margin: 2% 5%;
         display: flex;
         justify-content: space-between; 
         align-items: center;
+        padding-bottom: 20px;
     `
     const Logo = styled.h1`
         font-family : 'IBM Plex Sans', Arial, Helvetica, sans-serif;
@@ -25,16 +27,23 @@ const Header = (props) => {
         font-size : 20px;
         color : #FFFFFF;
         opacity : 0.7;
+        padding-left: 5%;
     `
+
     const Code = styled.a`
-        text-decoration: none;
+        padding-right: 5%;
+    `
+
+    const Icon = styled.img`
+        width: 30px;
+        height: 30px;
     `
 
     return (
         <HeaderContainer>
             <HeaderWrap>
                 <Logo>#randomquote</Logo>
-                <Code href="https://github.com/joanarijo/react-randomquote">logogithub</Code>
+                <Code href="https://github.com/joanarijo/react-randomquote" target='_blank'><Icon src={github} alt="github" /></Code>
             </HeaderWrap>
         </HeaderContainer>
      );

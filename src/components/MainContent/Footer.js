@@ -129,12 +129,12 @@ const Footer = ({quote, author}) => {
         <FooterContainer>
             <FooterWrap>
                 <Buttons>
-                    <TwitterShareButton title={tweet} via={"joanarijo"} url={"netlifylink.com"} style={style}>    
+                    <TwitterShareButton title={tweet} via={"joanarijo"} url={"https://randomquote-jr.netlify.app"} style={style}>    
                         <Share>Share <Icon src={twitter} alt="twitter" /></Share>
                     </TwitterShareButton>
                     <Refresh onClick={refreshPage}>Get a New Quote <Icon src={reload} alt="reload" /></Refresh>
                 </Buttons>
-                <Credits>Made with <Span>❤</Span> by <Link href="https://joanarijo.dev/">Joana Rijo</Link> • Quotes API by <Link href="http://forismatic.com/en/">Forismatic</Link></Credits>
+                <Credits>Made with <Span>❤</Span> by <Link href="https://joanarijo.dev/" target='_blank'>Joana Rijo</Link> • Quotes API by <Link href="http://forismatic.com/en/api/" target='_blank'>Forismatic</Link></Credits>
             </FooterWrap>
         </FooterContainer>
         

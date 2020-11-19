@@ -7,7 +7,7 @@ import reload from '../reload.svg';
 
 const Footer = ({quote, author}) => {
 
-    const tweet = quote + "- " + author;
+    const tweet = quote + author;
     const refreshPage = () => window.location.reload(false);
 
     const FooterContainer = styled.div`
@@ -21,15 +21,26 @@ const Footer = ({quote, author}) => {
     const FooterWrap = styled.div`
         border-top: 1px solid white;
         position: relative;
-        margin: 2% 5%;
+        margin: 2% 5% 0 5%;
+        padding-bottom: 50px;
         display: flex;
         justify-content: space-between; 
         align-items: center;
         padding-top: 50px;
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            justify-content: space-around;
+            flex-flow: column;
+            padding-bottom: 30px;
+          }
     `
 
     const Buttons = styled.div`
         padding-left: 5%;
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            padding-left: 0;
+        }
     `
 
     const Share = styled.a`
@@ -39,6 +50,16 @@ const Footer = ({quote, author}) => {
         padding: 10px 20px;
         font-family : 'IBM Plex Sans', Arial, Helvetica, sans-serif;
         font-weight: 300;
+
+        &:hover{
+            background: #0088b7;
+
+            img{
+                -webkit-transition: .4s;
+                transition: .4s;
+                transform: rotate(45deg);
+            }
+        }
     `
 
     const Refresh = styled.a`
@@ -49,16 +70,39 @@ const Footer = ({quote, author}) => {
         padding: 10px 20px;
         font-family : 'IBM Plex Sans', Arial, Helvetica, sans-serif;
         font-weight: 300;
+
+        &:hover{
+            background: #a53c8e;
+
+            img{
+                -webkit-transition: .4s;
+                transition: .4s;
+                transform: rotate(45deg);
+            }
+        }
     `
 
     const Credits = styled.div`
-       font-size: 11px; 
-       padding-right: 5%;
+        font-family : 'IBM Plex Sans', Arial, Helvetica, sans-serif;
+        font-weight: 300;    
+        font-size: 11px; 
+        padding-right: 5%;
+        letter-spacing: 1px;
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            margin-top: 20px;
+            padding-right: 0;
+        }
     `
 
     const Link = styled.a`
         text-decoration: none;
-        color: yellow; 
+        font-weight: 500;
+        color: white; 
+        border-bottom: 2px solid #b43f97;
+    `
+    const Span = styled.span`
+    color: #b43f97; 
     `
 
     const Icon = styled.img`
@@ -68,6 +112,10 @@ const Footer = ({quote, author}) => {
         vertical-align: middle; 
         display: inline-block;
         margin-left: 20px;
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            margin-left: 10px;
+        }
     `
 
     const style = {
@@ -86,7 +134,7 @@ const Footer = ({quote, author}) => {
                     </TwitterShareButton>
                     <Refresh onClick={refreshPage}>Get a New Quote <Icon src={reload} alt="reload" /></Refresh>
                 </Buttons>
-                <Credits>Made with ❤ by <Link href="https://joanarijo.dev/">Joana Rijo</Link> • Quotes API by <Link href="http://forismatic.com/en/">Forismatic</Link></Credits>
+                <Credits>Made with <Span>❤</Span> by <Link href="https://joanarijo.dev/">Joana Rijo</Link> • Quotes API by <Link href="http://forismatic.com/en/">Forismatic</Link></Credits>
             </FooterWrap>
         </FooterContainer>
         

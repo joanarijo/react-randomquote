@@ -20,6 +20,10 @@ const Header = (props) => {
         justify-content: space-between; 
         align-items: center;
         padding-bottom: 20px;
+        
+        @media (min-width: 320px) and (max-width: 767px) {
+            padding-bottom: 10px;
+          }
     `
     const Logo = styled.h1`
         font-family : 'IBM Plex Sans', Arial, Helvetica, sans-serif;
@@ -31,7 +35,7 @@ const Header = (props) => {
     `
 
     const Code = styled.a`
-        padding-right: 5%;
+        margin-right: 5%;
     `
 
     const Icon = styled.img`

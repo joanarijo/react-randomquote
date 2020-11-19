@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     //solves the lack of api's CORS headers
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    var apiUrl = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&callback=?';
+    var apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
     fetch(proxyUrl + apiUrl, {
       headers : { 
         'Content-Type': 'application/json',
@@ -19,7 +19,21 @@ function App() {
 
     })
       .then(response => response.json())
-      .then(data => setData(data));
+      .then(data => {
+          // sub string - when data.quoteAuthor is empty
+          if (!data.quoteAuthor) {
+            data.quoteAuthor = '- Unknown'
+            console.log(data)
+            setData(data)
+          }
+
+          else {
+            data.quoteAuthor = '- ' + data.quoteAuthor
+            console.log(data)
+            setData(data)
+        }
+      })
+
   }, []);
   
   return (

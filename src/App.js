@@ -9,9 +9,11 @@ function App() {
    
   useEffect(() => {
     //solves the lack of api's CORS headers
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    // var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     var apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
-    fetch(proxyUrl + apiUrl, {
+    
+    // fetch(proxyUrl + apiUrl, {
+    fetch(apiUrl, {
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
